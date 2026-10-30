@@ -2,7 +2,7 @@
 
 I'm a pharmacist and pharma sales professional in Lagos, Nigeria, and I build data tools for healthcare supply chains. This is my one-page portfolio.
 
-**Live site:** https://github.com/baylon-obinna/Landing_Page.git
+**Live site:** https://baylon-obinna.github.io/Landing_Page/
 
 ## What's on the page
 
