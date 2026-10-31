@@ -8,7 +8,12 @@
 <title>Obinna — Pharmacist building healthcare supply-chain tools</title>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@600;700&family=Instrument+Sans:wght@400;500;600&display=swap">
 <style>
-body{margin:0;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px);background:#F3F6F4}
+html{scroll-behavior:smooth}
+body{margin:0;padding:env(safe-area-inset-top,0px) env(safe-area-inset-right,0px) env(safe-area-inset-bottom,0px) env(safe-area-inset-left,0px);background:#F3F6F4;overflow-x:hidden}
+section[id]{scroll-margin-top:12px}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+a:focus-visible{outline:3px solid #0E7C7B;outline-offset:3px;border-radius:6px}
+.hero>*,.g3>*{min-width:0}
 *,*::before,*::after{box-sizing:border-box}
 html{-webkit-text-size-adjust:100%}
 img,svg{max-width:100%}
@@ -40,33 +45,63 @@ img,svg{max-width:100%}
 .flow li:last-child{padding-bottom:0}.flow li:last-child:after{display:none}
 .flow b{display:block;font-family:'Bricolage Grotesque',sans-serif;font-size:19px}
 .flow span{color:#3A5052;font-size:15px}
-@media(max-width:900px){.hero{gap:32px}.hero,.g3{grid-template-columns:1fr}.pulse,.navl{display:none}.wrap{padding:0 20px}.h2{font-size:34px}}
+@media(max-width:900px){.hero{gap:32px}.hero{grid-template-columns:1fr}.pulse{display:none}.wrap{padding-left:20px;padding-right:20px}}
+@media(max-width:600px){.g3{grid-template-columns:1fr}}
+
+.hdr{display:flex;justify-content:space-between;align-items:center;padding-top:24px;padding-bottom:24px;gap:12px}
+.navl{display:flex;gap:28px;font-size:15px;font-weight:500}
+.navl a{color:#0F2A2C;text-decoration:none;padding:10px 0;white-space:nowrap}
+.hdr-btn{padding:12px 20px;font-size:15px;min-height:44px}
+.pulse{display:block;margin-bottom:8px}
+.hero-p{font-size:20px;max-width:620px;margin:0 0 34px;color:#3A5052}
+.hero-card{padding:32px}
+.btns{display:flex;gap:14px;flex-wrap:wrap}
+.btns .btn{min-height:48px}
+.stat{font-weight:700;font-size:clamp(34px,9vw,44px);line-height:1}
+.stat-l{color:#3A5052;margin-top:6px}
+.h2{font-size:clamp(30px,6vw,44px)}
+.eyebrow{overflow-wrap:anywhere}
+@media(min-width:601px) and (max-width:900px){.g3{grid-template-columns:repeat(2,1fr)}.g3>:last-child:nth-child(odd){grid-column:1/-1}}
+@media(max-width:900px){
+.hdr{flex-wrap:wrap}
+.navl{order:3;width:100%;justify-content:space-between;gap:16px;font-size:14px;border-top:1px solid #D5E2DC;padding-top:2px;overflow-x:auto;-webkit-overflow-scrolling:touch}
+}
+@media(max-width:600px){
+.hero-p{font-size:18px;margin-bottom:28px}
+.hero-card{padding:24px}
+.card,.dk{padding:24px}
+.card h3,.dk h3{font-size:22px}
+.btns{flex-direction:column}
+.btns .btn{width:100%}
+.lead{font-size:17px;margin-bottom:32px}
+.g3{gap:20px}
+}
 </style>
 </head>
 <body>
 <div style="--accent:#0E7C7B;background:#F3F6F4;color:#0F2A2C;font-family:'Instrument Sans',system-ui,sans-serif;line-height:1.55">
 
-<header class="wrap" style="display:flex;justify-content:space-between;align-items:center;padding-top:24px;padding-bottom:24px;gap:12px">
+<header class="wrap hdr">
 <div class="d" style="font-weight:700;font-size:22px">Obinna<span style="color:var(--accent)">.</span></div>
-<nav class="navl" style="display:flex;gap:28px;font-size:15px;font-weight:500">
-<a href="#help" style="color:#0F2A2C;text-decoration:none">Who I help</a>
-<a href="#work" style="color:#0F2A2C;text-decoration:none">Selected work</a>
-<a href="#path" style="color:#0F2A2C;text-decoration:none">Background</a>
+<nav class="navl">
+<a href="#help">Who I help</a>
+<a href="#work">Selected work</a>
+<a href="#path">Background</a>
 </nav>
-<a class="btn" href="#contact" style="background:var(--accent);color:#fff;padding:10px 20px;font-size:15px">Work with me</a>
+<a class="btn hdr-btn" href="#contact" style="background:var(--accent);color:#fff">Work with me</a>
 </header>
 
 <section class="wrap hero" style="padding-top:clamp(24px,6vw,40px);padding-bottom:clamp(48px,9vw,72px)">
 <div>
 <div class="eyebrow">Pharmacist &middot; Pharma sales &middot; HealthTech builder</div>
 <h1 class="d" style="font-weight:700;font-size:clamp(34px,8.5vw,60px);line-height:1.03;letter-spacing:-.02em;margin:0 0 24px">A pharmacist who builds the data tools healthcare supply chains need.</h1>
-<p style="font-size:20px;max-width:620px;margin:0 0 34px;color:#3A5052">I manage pharmacy, distributor, wholesale and hospital accounts in Lagos, and I automate the reporting around them, so teams see what is selling, what is short and what to do next.</p>
-<div style="display:flex;gap:14px;flex-wrap:wrap">
+<p class="hero-p">I manage pharmacy, distributor, wholesale and hospital accounts in Lagos, and I automate the reporting around them, so teams see what is selling, what is short and what to do next.</p>
+<div class="btns">
 <a class="btn" href="#contact" style="background:#0F2A2C;color:#F3F6F4">Start a conversation</a>
 <a class="btn" href="#work" style="border:2px solid #0F2A2C;color:#0F2A2C">See what I've built</a>
 </div>
 </div>
-<aside class="card" style="padding:32px">
+<aside class="card hero-card">
 <div style="font-size:13px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:#3A5052;margin-bottom:20px">From shelf to signal</div>
 <ol class="flow">
 <li><b>Pharmacies &amp; hospitals</b><span>Where medicines are dispensed</span></li>
@@ -79,9 +114,9 @@ img,svg{max-width:100%}
 
 <section style="background:#fff;border-top:1px solid #D5E2DC;border-bottom:1px solid #D5E2DC">
 <div class="wrap g3" style="padding-top:36px;padding-bottom:36px">
-<div><div class="d" style="font-weight:700;font-size:44px;color:var(--accent);line-height:1">4</div><div style="color:#3A5052;margin-top:6px">account channels managed: pharmacies, distributors, wholesale, hospitals</div></div>
-<div><div class="d" style="font-weight:700;font-size:44px;color:var(--accent);line-height:1">Multi-SKU’s</div><div style="color:#3A5052;margin-top:6px">performance tracked automatically against projections</div></div>
-<div><div class="d" style="font-weight:700;font-size:44px;color:var(--accent);line-height:1">B.Pharm</div><div style="color:#3A5052;margin-top:6px">with hospital, retail and community practice behind it</div></div>
+<div><div class="d stat">4</div><div class="stat-l">account channels managed: pharmacies, distributors, wholesale, hospitals</div></div>
+<div><div class="d stat">Multi-SKU’s</div><div class="stat-l">performance tracked automatically against projections</div></div>
+<div><div class="d stat">B.Pharm</div><div class="stat-l">with hospital, retail and community practice behind it</div></div>
 </div>
 </section>
 
@@ -126,7 +161,7 @@ img,svg{max-width:100%}
 <div class="eyebrow">Background</div>
 <h2 class="h2">The field context behind the tools.</h2>
 <p class="lead">Every build starts from something I have seen on the pharmacy floor or in an account meeting.</p>
-<svg class="pulse" viewBox="0 0 1200 100" width="100%" aria-hidden="true" style="display:block;margin-bottom:8px">
+<svg class="pulse" viewBox="0 0 1200 100" width="100%" aria-hidden="true">
 <polyline points="0,70 160,70 190,70 210,28 230,86 250,70 400,70 560,70 590,70 610,28 630,86 650,70 800,70 960,70 1000,40 1040,70 1200,70" fill="none" style="stroke:#9FC7BD" stroke-width="3"/>
 <circle cx="200" cy="70" r="11" style="fill:var(--accent)"/><circle cx="600" cy="70" r="11" style="fill:var(--accent)"/><circle cx="1000" cy="40" r="12" style="fill:var(--accent)"/>
 </svg>
@@ -141,7 +176,7 @@ img,svg{max-width:100%}
 <div class="wrap" style="text-align:center">
 <h2 class="h2">Have a supply-chain or health-data problem?</h2>
 <p style="font-size:18px;color:#2F4B4D;max-width:580px;margin:0 auto 28px">Tell me what you are trying to see. I will tell you if I can help.</p>
-<div style="display:flex;gap:14px;justify-content:center;flex-wrap:wrap">
+<div class="btns" style="justify-content:center">
 <a class="btn" href="mailto:nwaoshop@gmail.com" style="background:#0F2A2C;color:#F3F6F4">nwaoshop@gmail.com</a>
 <a class="btn" href="https://www.linkedin.com/in/paschal-nwaosho-7238b5274/" style="border:2px solid #0F2A2C;color:#0F2A2C">Connect on LinkedIn</a>
 </div>
